@@ -5,8 +5,9 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import java.time.LocalDate
 import java.time.Period
+import java.util.*
 
-class Pessoa (private val nome : String, private val dataNascimento: LocalDate){
+class Pessoa ( val nome : String,  val dataNascimento: Date){
      private val veiculos : MutableList<Veiculo> = mutableListOf()
      private var carta: Carta? = null
      private var posicao: Posicao = Posicao(0,0)
