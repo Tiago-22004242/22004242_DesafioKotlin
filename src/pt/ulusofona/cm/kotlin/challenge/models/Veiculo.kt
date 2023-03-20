@@ -4,9 +4,9 @@ import java.time.LocalDate
 
 abstract class Veiculo (open val identificador : String){
     var posicao : Posicao = Posicao(0,0)
-    var dataAquisicao : LocalDate = LocalDate.now()
+    var dataDeAquisicao : LocalDate = LocalDate.now()
     fun setDataAquisicao() {
-        dataAquisicao = LocalDate.now()
+        dataDeAquisicao = LocalDate.now()
     }
     abstract fun requerCarta() : Boolean
 }

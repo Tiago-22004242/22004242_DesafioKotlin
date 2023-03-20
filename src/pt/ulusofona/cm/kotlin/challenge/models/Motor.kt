@@ -1,8 +1,21 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
-class Motor(val cavalos : Int , val cilindrada : Int) {
-    private val ligado : Boolean = false
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
+
+class Motor(val cavalos : Int , val cilindrada : Int) : Ligavel {
+    var ligado : Boolean = false
     override fun toString(): String {
         return "Motor | $cavalos | $cilindrada"
+    }
+    override fun ligar() {
+        ligado = true
+    }
+
+    override fun desligar() {
+        ligado = false
+    }
+
+    override fun estaLigado(): Boolean {
+        return ligado
     }
 }
