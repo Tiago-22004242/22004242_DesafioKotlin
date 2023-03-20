@@ -1,7 +1,7 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 
-class Bicicleta(val identificador : String): Veiculo(identificador){
+class Bicicleta(override val identificador : String): Veiculo(identificador){
     override fun requerCarta(): Boolean {
        return false
     }

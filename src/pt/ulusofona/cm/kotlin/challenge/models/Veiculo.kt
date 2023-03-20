@@ -3,7 +3,7 @@ import pt.ulusofona.cm.kotlin.challenge.models.Posicao
 import java.time.LocalDate
 
 
-abstract class Veiculo (val identificador : String){
+abstract class Veiculo (open val identificador : String){
     private var posicao : Posicao = Posicao(0,0)
     private var dataAquisicao : LocalDate = LocalDate.now()
     fun setDataAquisicao() {
