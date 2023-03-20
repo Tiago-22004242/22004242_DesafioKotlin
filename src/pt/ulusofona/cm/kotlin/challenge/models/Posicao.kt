@@ -11,9 +11,6 @@ class Posicao(var x : Int, var y: Int) {
             this.y = y
         }
     }
-    fun getX() = x
-    fun getY() = y
-
     override fun toString(): String {
         return "Posicao | x:$x | y:$y"
     }

@@ -5,6 +5,6 @@ class Carro(override val identificador : String, val motor : Motor) : Veiculo(id
        return true
     }
     override fun toString(): String {
-        return "Carro | $identificador | ${getDataAquisicao()} | ${getPosicao().toString()}"
+        return "Carro | $identificador | $dataAquisicao | ${posicao.toString()}"
     }
 }

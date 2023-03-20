@@ -16,7 +16,7 @@ class Pessoa ( val nome : String,  val dataNascimento: Date){
      }
      fun pesquisarVeiculo(identificador: String) : Veiculo {
           for(veiculo : Veiculo in veiculos) {
-               if(veiculo.getIdentificador().equals(identificador)) {
+               if(veiculo.identificador.equals(identificador)) {
                     return veiculo
                }
           }
@@ -33,7 +33,7 @@ class Pessoa ( val nome : String,  val dataNascimento: Date){
           if (veiculo.requerCarta() && this.carta == null) {
                throw PessoaSemCartaException(nome)
           } else {
-               veiculo.getPosicao().alterarPosicao(x,y)
+               veiculo.posicao.alterarPosicao(x,y)
           }
      }
      fun temCarta() : Boolean{

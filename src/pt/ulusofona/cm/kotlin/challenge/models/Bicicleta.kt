@@ -6,6 +6,6 @@ class Bicicleta(override val identificador : String): Veiculo(identificador){
        return false
     }
     override fun toString(): String {
-        return "Bicicleta | $identificador | ${getDataAquisicao()} | ${getPosicao().toString()}"
+        return "Bicicleta | $identificador | $dataAquisicao | $posicao"
     }
 }
