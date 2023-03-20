@@ -7,8 +7,11 @@ class Bicicleta(override val identificador : String): Veiculo(identificador),Mov
     override fun requerCarta(): Boolean {
        return false
     }
+    fun data() : String {
+        return dataDeAquisicao.toString()
+    }
     override fun toString(): String {
-        return "Bicicleta | $identificador | $dataDeAquisicao | $posicao"
+        return "Bicicleta | $identificador | ${data()} | $posicao"
     }
     override fun moverPara(x: Int, y: Int) {
         posicao.x = x
