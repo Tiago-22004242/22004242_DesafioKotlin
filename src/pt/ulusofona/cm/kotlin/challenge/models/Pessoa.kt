@@ -1,8 +1,7 @@
-package pt.ulusofona.cm.kotlin.challenge
-
+package pt.ulusofona.cm.kotlin.challenge.models
+import pt.ulusofona.cm.kotlin.challenge.Carta
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
-import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoLigadoException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import java.time.LocalDate
 import java.time.Period

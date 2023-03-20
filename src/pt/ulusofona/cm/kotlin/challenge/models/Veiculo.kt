@@ -1,5 +1,5 @@
-package pt.ulusofona.cm.kotlin.challenge
-
+package pt.ulusofona.cm.kotlin.challenge.models
+import pt.ulusofona.cm.kotlin.challenge.models.Posicao
 import java.time.LocalDate
 
 
