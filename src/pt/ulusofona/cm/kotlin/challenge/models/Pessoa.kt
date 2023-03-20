@@ -7,9 +7,9 @@ import java.time.Period
 import java.util.*
 
 class Pessoa ( val nome : String,  val dataNascimento: Date){
-     private val veiculos : MutableList<Veiculo> = mutableListOf()
-     private var carta: Carta? = null
-     private var posicao: Posicao = Posicao(0,0)
+     val veiculos : MutableList<Veiculo> = mutableListOf()
+     var carta: Carta? = null
+     var posicao: Posicao = Posicao(0,0)
 
      fun comprarVeiculo(veiculo: Veiculo) {
           veiculos.add(veiculo)
