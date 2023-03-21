@@ -1,5 +1,6 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
+import java.text.SimpleDateFormat
 
 class Carro(override val identificador : String, val motor : Motor) : Veiculo(identificador), Movimentavel{
     override fun requerCarta(): Boolean {
@@ -9,10 +10,12 @@ class Carro(override val identificador : String, val motor : Motor) : Veiculo(id
         posicao.x = x
         posicao.y = y
     }
-    fun data() : String {
-        return dataDeAquisicao.toString()
+    fun dataFormatada() : String {
+        val formato = SimpleDateFormat("dd-MM-yyyy")
+        val dataModificada = formato.format(dataDeAquisicao)
+        return dataModificada.toString()
     }
     override fun toString(): String {
-        return "Carro | $identificador | ${data()} | ${posicao.toString()}"
+        return "Carro | $identificador | ${dataFormatada()} | ${posicao.toString()}"
     }
 }
