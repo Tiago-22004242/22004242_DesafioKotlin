@@ -4,6 +4,7 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import java.time.LocalDate
 import java.time.Period
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class Pessoa ( val nome : String,  val dataNascimento: Date){
@@ -48,8 +49,12 @@ class Pessoa ( val nome : String,  val dataNascimento: Date){
                throw MenorDeIdadeException()
           }
       }
-
+     fun data() : String {
+          var formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+          var date = LocalDate.parse(dataNascimento.toString(), formatter)
+          return date.toString()
+     }
      override fun toString(): String {
-          return "Pessoa | $nome | $dataNascimento | ${posicao.toString()}"
+          return "Pessoa | $nome | ${data()} | ${posicao.toString()}"
      }
 }
