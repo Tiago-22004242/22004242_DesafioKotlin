@@ -3,7 +3,7 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.text.SimpleDateFormat
 
-class Carro(override val identificador : String, val motor : Motor) : Veiculo(identificador), Ligavel{
+class Carro(override val identificador : String, val motor : Motor) : Veiculo(identificador){
     override fun requerCarta(): Boolean {
        return true
     }
@@ -16,17 +16,6 @@ class Carro(override val identificador : String, val motor : Motor) : Veiculo(id
         return dataModificada.toString()
     }
 
-    override fun ligar() {
-        motor.ligado = true
-    }
-
-    override fun desligar() {
-        motor.ligado = false
-    }
-
-    override fun estaLigado(): Boolean {
-       return motor.ligado
-    }
     override fun toString(): String {
         return "Carro | $identificador | ${dataFormatada()} | ${posicao.toString()}"
     }
