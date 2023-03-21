@@ -31,8 +31,12 @@ class Pessoa ( val nome : String,  val dataNascimento: Date) : Movimentavel{
      }
      fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
           var veiculo : Veiculo = pesquisarVeiculo(identificador)
-          if (veiculo.requerCarta() && this.carta == null) {
-               throw PessoaSemCartaException(nome)
+          if (veiculo.requerCarta()) {
+               if (temCarta()){
+                    veiculo.moverPara(x,y)
+               } else {
+                    throw PessoaSemCartaException(nome)
+               }
           } else {
                veiculo.moverPara(x,y)
           }
@@ -41,7 +45,7 @@ class Pessoa ( val nome : String,  val dataNascimento: Date) : Movimentavel{
           return this.carta != null
      }
      fun tirarCarta() {
-          if(calcularIdade(dataNascimento) > 18) {
+          if(calcularIdade(dataNascimento) >= 18) {
                this.carta = Carta()
           } else {
                throw MenorDeIdadeException()
