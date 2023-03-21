@@ -7,7 +7,9 @@ class Carro(override val identificador : String, val motor : Motor) : Veiculo(id
        return true
     }
     override fun moverPara(x: Int, y: Int) {
-        posicao.alterarPosicao(x,y)
+        if(estaLigado()) {
+            posicao.alterarPosicao(x,y)
+        }
     }
     fun dataFormatada() : String {
         val formato = SimpleDateFormat("dd-MM-yyyy")
