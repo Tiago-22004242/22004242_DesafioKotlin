@@ -64,6 +64,7 @@ class Pessoa ( val nome : String,  val dataNascimento: Date) : Movimentavel{
      }
 
      override fun moverPara(x: Int, y: Int) {
+          posicao.alterarPosicao(x,y)
      }
 
      override fun toString(): String {
