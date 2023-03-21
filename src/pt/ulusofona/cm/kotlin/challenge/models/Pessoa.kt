@@ -2,11 +2,12 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 import java.text.SimpleDateFormat
 
 
-class Pessoa ( val nome : String,  val dataNascimento: Date){
+class Pessoa ( val nome : String,  val dataNascimento: Date) : Movimentavel{
      val veiculos : MutableList<Veiculo> = mutableListOf()
      var carta: Carta? = null
      var posicao: Posicao = Posicao(0,0)
@@ -61,6 +62,10 @@ class Pessoa ( val nome : String,  val dataNascimento: Date){
           val dataModificada = formato.format(dataNascimento)
           return dataModificada.toString()
      }
+
+     override fun moverPara(x: Int, y: Int) {
+     }
+
      override fun toString(): String {
           return "Pessoa | $nome | ${dataFormatada()} | ${posicao.toString()}"
      }
