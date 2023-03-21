@@ -41,7 +41,7 @@ class Pessoa ( val nome : String,  val dataNascimento: Date) : Movimentavel{
           return this.carta != null
      }
      fun tirarCarta() {
-          if(calcularIdade(dataNascimento) >= 18) {
+          if(calcularIdade(dataNascimento) > 18) {
                this.carta = Carta()
           } else {
                throw MenorDeIdadeException()
