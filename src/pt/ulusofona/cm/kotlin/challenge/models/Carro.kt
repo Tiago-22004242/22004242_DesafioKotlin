@@ -9,6 +9,9 @@ class Carro(override val identificador : String, val motor : Motor) : Veiculo(id
     override fun moverPara(x: Int, y: Int) {
         if(estaLigado()) {
             posicao.alterarPosicao(x,y)
+        } else {
+            ligar()
+            posicao.alterarPosicao(x,y)
         }
     }
     fun dataFormatada() : String {
