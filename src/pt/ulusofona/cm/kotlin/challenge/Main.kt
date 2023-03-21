@@ -5,5 +5,5 @@ import java.util.*
 
 fun main() {
     var pessoa : Pessoa = Pessoa("tiago", dataNascimento = Date())
-    println(pessoa)
+    println(pessoa.tirarCarta())
 }

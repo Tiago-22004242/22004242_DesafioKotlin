@@ -2,8 +2,6 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
-import java.time.LocalDate
-import java.time.Period
 import java.util.*
 import java.text.SimpleDateFormat
 
@@ -42,14 +40,22 @@ class Pessoa ( val nome : String,  val dataNascimento: Date){
           return this.carta != null
      }
      fun tirarCarta() {
-          val from = LocalDate.parse(dataNascimento.toString())
-          val to = LocalDate.parse(LocalDate.now().toString())
-          if(Period.between(from,to).years >= 18) {
+          if(calcularIdade(dataNascimento) >= 18) {
                this.carta = Carta()
           } else {
                throw MenorDeIdadeException()
           }
       }
+     fun calcularIdade(birthDate: Date): Int {
+          val now = Calendar.getInstance()
+          val dob = Calendar.getInstance()
+          dob.time = birthDate
+          var age = now.get(Calendar.YEAR) - dob.get(Calendar.YEAR)
+          if (now.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+               age--
+          }
+          return age
+     }
      fun dataFormatada() : String {
           val formato = SimpleDateFormat("dd-MM-yyyy")
           val dataModificada = formato.format(dataNascimento)
