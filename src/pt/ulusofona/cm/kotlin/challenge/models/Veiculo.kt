@@ -10,5 +10,4 @@ abstract class Veiculo (open val identificador : String) : Movimentavel {
         dataDeAquisicao = Date()
     }
     abstract fun requerCarta() : Boolean
-
 }
